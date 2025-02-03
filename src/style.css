@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose table {
+  @apply w-full border-collapse border border-gray-300;
+}
+
+.prose td, .prose th {
+  @apply border border-gray-300 p-2;
+}
+
+.prose th {
+  @apply bg-gray-50;
+}
+
+/* DOCX Styles */
+.prose h1 {
+  @apply text-3xl font-bold mb-6 mt-8;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-4 mt-6;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mb-3 mt-5;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.prose img {
+  @apply max-w-full h-auto my-4;
+}
