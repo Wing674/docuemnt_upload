@@ -6,7 +6,7 @@ import * as mammoth from 'mammoth'
 export const useDocumentStore = defineStore('document', () => {
   const content = ref<string>('')
   const loading = ref(false)
-  const error = ref(false)
+  const error = ref('')
   const fileName = ref('')
   const fileType = ref('')
   const pdfUrl = ref<string>('')
@@ -64,8 +64,8 @@ export const useDocumentStore = defineStore('document', () => {
       // Split into pages
       const pages: string[] = []
       for (let i = 0; i < json.length; i += ROWS_PER_PAGE) {
-        const pageRows = json.slice(i, i + ROWS_PER_PAGE)
-        
+        const pageRows = json.slice(i, i + ROWS_PER_PAGE) as any[][];
+                
         // Create a new worksheet for this page
         const pageWorksheet = XLSX.utils.aoa_to_sheet(pageRows)
         
